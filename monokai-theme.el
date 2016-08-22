@@ -322,28 +322,20 @@ Also affects 'linum-mode' background."
                                      :background ,terminal-monokai-bg))))
 
    `(highlight
-     ((,class (:foreground ,monokai-bg
-                           :background ,monokai-highlight))
-      (,terminal-class (:foreground ,terminal-monokai-bg
-                                    :background ,terminal-monokai-highlight))))
+     ((,class (:background ,monokai-highlight))
+      (,terminal-class (:background ,terminal-monokai-highlight))))
 
    `(lazy-highlight
-     ((,class (:inherit highlight
-                        :background ,monokai-comments))
-      (,terminal-class (:inherit highlight
-                                 :background ,terminal-monokai-comments))))
+     ((,class (:background ,monokai-highlight-alt))
+      (,terminal-class (:background ,terminal-monokai-highlight-alt))))
 
    `(region
-     ((,class (:inherit highlight
-                        :background ,monokai-highlight))
-      (,terminal-class (:inherit highlight
-                                 :background ,terminal-monokai-highlight))))
+     ((,class (:background ,monokai-highlight))
+      (,terminal-class (:background ,terminal-monokai-highlight))))
 
    `(secondary-selection
-     ((,class (:inherit region
-                        :background ,monokai-blue))
-      (,terminal-class (:inherit region
-                                 :background ,terminal-monokai-blue))))
+     ((,class (:background ,monokai-highlight-alt))
+      (,terminal-class (:background ,terminal-monokai-highlight-alt))))
 
    `(shadow
      ((,class (:foreground ,monokai-comments))
@@ -1935,8 +1927,8 @@ Also affects 'linum-mode' background."
 
    ;; evil-search-highlight-persist
    `(evil-search-highlight-persist-highlight-face
-     ((,class (:inherit region))
-      (,terminal-class (:inherit region))))
+     ((,class (:inherit secondary-selection))
+      (,terminal-class (:inherit secondary-selection))))
 
    ;; fic
    `(fic-author-face
